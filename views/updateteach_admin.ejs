@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>MY APP</title>
+  <script>
+    function validateform()
+{
+	var student_id= document.update.teacher_id.value;
+	var f_name= document.update.teacher_f_name.value;
+	var l_name= document.update.teacher_l_name.value;
+	var email= document.update.teacher_email.value;
+	var pass= document.update.teacher_pass.value;
+	var phone_num= document.update.teacher_phone_num.value;
+	
+	if(student_id=null||student_id=="")
+	{
+		alert("Id can't be blank");
+		return false;
+	}
+	else if(f_name=null||f_name=="")
+	{
+		alert("First Name can't be blank");
+		return false;
+	}
+	else if(l_name=null||l_name=="")
+	{
+		alert("Last Name can't be blank");
+		return false;
+	}
+	else if(email=null||email=="")
+	{
+		alert("Email can't be blank");
+		return false;
+	}
+    else if(pass=null||pass=="")
+	{
+		alert("Password can't be blank");
+		return false;
+	}
+     else if(phone_num=null||phone_num=="")
+	{
+		alert("Phone Number can't be blank");
+		return false;
+	}
+}
+</script>
+</head>
+<body>
+  <div w3-include-html="header_admin.html"></div>
+  <div id='kotak-tengah'></div>
+    <form name="update" onsubmit="return validateform()" action="/apply-update_teach-admin" method="POST">
+      <div class=mb-3>
+        <label for='student_id' class=form-label>Teacher ID</label>
+        <input type='text' class=form-control name='teacher_id' value='<%=teacher.teacher_id %>'>
+        </div>
+        
+        <div class=mb-3>
+        <label for=f_name class=form-label>Firstname:</label>
+        <input type='text' class=form-control name='teacher_f_name' value='<%=teacher.teacher_f_name %>'>
+        </div>
+
+        <div class=mb-3>
+        <label for='l_name' class='form-label'>Lastname:</label>
+        <input type='text' class='form-control' name='teacher_l_name' value='<%= teacher.teacher_l_name %>'>
+        </div>
+        <div class=mb-3>
+        <label for='email' class='form-label'>Email:</label>
+        <input type='email' class='form-control' name='teacher_email' value='<%= teacher.teacher_email%>'>
+        </div>
+        
+        <div class=mb-3>
+        <label for='pass' class='form-label'>Password:</label>
+        <input type='password' class='form-control' name='teacher_pass' value='<%= teacher.teacher_pass%>'>
+        </div>
+        
+        <div class=mb-3>
+        <label for='phone_num' class='form-label'>Phone Number:</label>
+        <input type='number' class='form-control' name='teacher_phone_num' value='<%= teacher.teacher_phone_num%>'>
+        </div>
+        <button type=submit class='btn btn-primary'>Update</button>
+      </form>
+       </div>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
+    </body>
+    </html>
