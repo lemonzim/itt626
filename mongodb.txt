@@ -1,0 +1,8 @@
+hazimsuhairi
+1Ii29032001
+
+https://zellwk.com/blog/crud-express-mongodb/
+
+https://www.youtube.com/watch?v=TDe7DRYK8vU
+
+    "proxy": "http:/localhost:5000",
